@@ -37,7 +37,15 @@ for i in range(20):
 
 outputTable = table2ascii(
 		header = ["Title","Discount","Original Price","Discounted Price","Link"],
-		body = [[relevantInfo['title'],relevantInfo['discount'],relevantInfo['original_price'],relevantInfo['new_price'],relevantInfo['link']] for relevantInfo in relevantInfos],
+		body = [
+					[
+						relevantInfo['title'],
+						relevantInfo['discount'],
+						relevantInfo['original_price'],
+						relevantInfo['new_price'],
+						relevantInfo['link']
+					] for relevantInfo in relevantInfos
+				],
 		style = PresetStyle.ascii_box
 	)
 
