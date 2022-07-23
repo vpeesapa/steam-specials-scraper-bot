@@ -1,2 +1,5 @@
-# steam-specials-scraper-bot
-A Discord bot that displays the top 20 games that are currently on sale on Steam
+# Steam Specials Bot
+A Discord bot that displays the top 10 games and also displays top 10 top sellers that are currently on Steam
+
+## Author
+* Varun Peesapati
