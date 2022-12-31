@@ -29,11 +29,23 @@ def scrape():
 		info['title'] = searchResults[i].find('span',class_='title').text
 
 		discountContainer = searchResults[i].find('div',class_='search_discount')
-		info['discount'] = discountContainer.find('span').text.split('-')[1]
+
+		discountSpan = discountContainer.find('span')
+
+		if discountSpan != None:
+			info['discount'] = discountSpan.text.split('-')[1]
+		else:
+			info['discount'] = 'N/A'
 
 		priceContainer = searchResults[i].find('div',class_='search_price')
-		info['original_price'] = priceContainer.find('strike').text
-		info['new_price'] = priceContainer.contents[3].strip()
+		originalPrice = priceContainer.find('strike');
+
+		if originalPrice != None:
+			info['original_price'] = originalPrice.text
+			info['new_price'] = priceContainer.contents[3].strip()
+		else:
+			info['original_price'] = 'N/A'
+			info['new_price'] = 'N/A'
 
 		relevantInfos.append(info)
 
